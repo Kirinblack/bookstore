@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/user")
+@RequestMapping("api/v3/user")
 @CrossOrigin(origins = "*")
 public class UserController implements UserControllerDocs {
 

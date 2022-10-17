@@ -13,7 +13,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/book")
+@RequestMapping("api/v3/book")
 @CrossOrigin(origins = "*")
 public class BookController implements BookControllerDocs {
 

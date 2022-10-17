@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "Publisher")
 public class Publisher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

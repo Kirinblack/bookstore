@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "User")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,6 +29,7 @@ public class User {
 
     @Column(nullable = false, length = 100)
     private String  address;
+
     @Column(nullable = false, unique = true, length = 30)
     private String username;
 

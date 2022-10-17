@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "Rental")
 public class Rental {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -30,6 +31,6 @@ public class Rental {
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "user_id")
     private User user;
 }

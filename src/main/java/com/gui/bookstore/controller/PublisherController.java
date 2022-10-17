@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/publisher")
+@RequestMapping("api/v3/publisher")
 @CrossOrigin(origins = "*")
 public class PublisherController extends PublisherResponseDTO {
 
