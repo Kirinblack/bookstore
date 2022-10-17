@@ -9,8 +9,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "Book")
-public class Book {
+@Table(name = "book")
+public class BookModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,20 +23,14 @@ public class Book {
     private int quantity;
 
     @Column(columnDefinition =  "integer default 0")
-    private int requentQuantity;
+    private int minimumQuantity;
 
     @Column(nullable = false)
     private LocalDate release;
 
     @Column(nullable = false)
-    private LocalDate changeDate;
-
-    @Column(nullable = false)
-    private LocalDate launchDate;
-
-    @Column(nullable = false)
     private String author;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    private Publisher publisher;
+    private PublisherModel publisherModel;
 }

@@ -1,6 +1,6 @@
-package com.gui.bookstore.controller.DTO.Response;
+package com.gui.bookstore.controller.dto.response;
 
-import com.gui.bookstore.model.Publisher;
+import com.gui.bookstore.model.PublisherModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,5 +30,5 @@ public class BookResponseDTO {
 
     private String author;
 
-    private Publisher publisher;
+    private PublisherModel publisherModel;
 }

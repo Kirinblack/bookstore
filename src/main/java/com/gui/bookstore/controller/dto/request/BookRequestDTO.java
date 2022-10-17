@@ -1,46 +1,40 @@
-package com.gui.bookstore.controller.DTO.Request;
+package com.gui.bookstore.controller.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRequestDTO {
+public class BookRequestDTO {
 
     private Long id;
 
     @NotNull
     @NotEmpty
-    @Size(max = 255)
+    @Size(max = 100)
     private String name;
 
     @NotNull
-    @NotEmpty
-    @Email
-    private String email;
+    private Integer quantity;
+
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate release;
 
     @NotNull
     @NotEmpty
-    private String city;
+    private String author;
 
     @NotNull
-    @NotEmpty
-    private String address;
-
-    @NotNull
-    @NotEmpty
-    private String username;
-
-    @NotNull
-    @NotEmpty
-    private String password;
+    private Long publisherId ;
 }

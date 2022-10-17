@@ -1,8 +1,8 @@
 package com.gui.bookstore.controller;
 
 
-import com.gui.bookstore.controller.DTO.Request.UserRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.UserResponseDTO;
+import com.gui.bookstore.controller.dto.request.UserRequestDTO;
+import com.gui.bookstore.controller.dto.response.UserResponseDTO;
 
 import com.gui.bookstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/user")
+@RequestMapping("api/v3/user")
 @CrossOrigin(origins = "*")
 public class UserController implements UserControllerDocs {
 
@@ -45,8 +45,7 @@ public class UserController implements UserControllerDocs {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Long id, @RequestBody @Valid UserRequestDTO userRequestDTO) {
         userService.delete(id);
     }
-
 }

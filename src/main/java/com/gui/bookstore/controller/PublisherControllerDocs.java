@@ -1,8 +1,8 @@
 package com.gui.bookstore.controller;
 
 
-import com.gui.bookstore.controller.DTO.Request.PublisherRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.PublisherResponseDTO;
+import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
+import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,7 +14,7 @@ import org.springframework.data.domain.Pageable;
 @Api("Publishers management")
 public interface PublisherControllerDocs {
 
-    @ApiOperation(value = "Publisher creation operation")
+    @ApiOperation(value = "PublisherModel creation operation")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Success publisher creation"),
             @ApiResponse(code = 400, message = "Missing required fields, wrong field range value or publisher already registered on system")
@@ -24,7 +24,7 @@ public interface PublisherControllerDocs {
     @ApiOperation(value = "Find publisher by id operation")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success publisher found"),
-            @ApiResponse(code = 404, message = "Publisher not found error")
+            @ApiResponse(code = 404, message = "PublisherModel not found error")
     })
     PublisherResponseDTO findById(Long id);
 
@@ -37,11 +37,11 @@ public interface PublisherControllerDocs {
     @ApiOperation(value = "Delete publisher by id operation")
     @ApiResponses(value = {
             @ApiResponse(code = 204, message = "Success publisher deleted"),
-            @ApiResponse(code = 404, message = "Publisher not found error")
+            @ApiResponse(code = 404, message = "PublisherModel not found error")
     })
-    void delete(Long id);
+    void delete(Long id, PublisherRequestDTO publisherRequestDTO);
 
-    @ApiOperation(value = "Publisher update operation")
+    @ApiOperation(value = "PublisherModel update operation")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success publisher update"),
             @ApiResponse(code = 400, message = "Missing required field, or an error on validation field rules")

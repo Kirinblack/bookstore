@@ -10,8 +10,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "Rental")
-public class Rental {
+@Table(name = "rental")
+public class RentalModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,16 +21,16 @@ public class Rental {
     private LocalDate rentalDate;
 
     @Column(nullable = false)
-    private LocalDate returnForecast;
+    private LocalDate forecastDate;
 
     @Column
-    private String returnDate;
+    private LocalDate devolutionDate;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
-    private Book book;
+    private BookModel bookModel;
 
     @ManyToOne
-    @JoinColumn(name = "users_id")
-    private User user;
+    @JoinColumn(name = "user_id")
+    private UserModel userModel;
 }

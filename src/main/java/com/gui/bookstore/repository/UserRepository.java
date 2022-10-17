@@ -1,15 +1,15 @@
 package com.gui.bookstore.repository;
 
-import com.gui.bookstore.model.User;
+import com.gui.bookstore.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<UserModel,Long> {
 
-    Optional<User> findByUsername(String username);
+    Optional<UserModel> findByUsername(String username);
 
-    Optional<User> findByEmail(String email);
+    Optional<UserModel> findByEmail(String email);
 
-    Optional<User> findAllByUsername(String username);
+    Optional<UserModel> findAllByUsername(String username);
 }

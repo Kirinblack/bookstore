@@ -9,8 +9,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "Publisher")
-public class Publisher {
+@Table(name = "publisher")
+public class PublisherModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

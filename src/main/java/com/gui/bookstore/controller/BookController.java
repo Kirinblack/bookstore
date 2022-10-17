@@ -1,7 +1,7 @@
 package com.gui.bookstore.controller;
 
-import com.gui.bookstore.controller.DTO.Request.BookRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.BookResponseDTO;
+import com.gui.bookstore.controller.dto.request.BookRequestDTO;
+import com.gui.bookstore.controller.dto.response.BookResponseDTO;
 import com.gui.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,7 +13,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/book")
+@RequestMapping("api/v3/book")
 @CrossOrigin(origins = "*")
 public class BookController implements BookControllerDocs {
 
@@ -31,7 +31,6 @@ public class BookController implements BookControllerDocs {
         return bookService.findById(id);
     }
 
-    @Override
     @GetMapping()
     public Page<BookResponseDTO> findAll(Pageable pageable){
         return bookService.findAll(pageable);
@@ -39,12 +38,12 @@ public class BookController implements BookControllerDocs {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id,@RequestBody @Valid BookRequestDTO bookRequestDTO){
+    public void delete(@PathVariable Long id, @RequestBody @Valid BookRequestDTO bookRequestDTO){
         bookService.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public BookResponseDTO update(@PathVariable Long id,@RequestBody @Valid BookRequestDTO bookRequestDTO){
+    public BookResponseDTO update(@PathVariable Long id, @RequestBody @Valid BookRequestDTO bookRequestDTO){
         return bookService.update(id,bookRequestDTO);
     }
 }

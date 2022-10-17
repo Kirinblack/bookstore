@@ -1,4 +1,4 @@
-package com.gui.bookstore.controller.DTO.Response;
+package com.gui.bookstore.controller.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

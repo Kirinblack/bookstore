@@ -1,8 +1,8 @@
 package com.gui.bookstore.controller;
 
 
-import com.gui.bookstore.controller.DTO.Request.RentalRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.RentalResponseDTO;
+import com.gui.bookstore.controller.dto.request.RentalRequestDTO;
+import com.gui.bookstore.controller.dto.response.RentalResponseDTO;
 import com.gui.bookstore.service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/rental")
+@RequestMapping("api/v3/rental")
 @CrossOrigin(origins = "*")
 public class RentalController implements  RentalControllerDocs {
 
@@ -44,8 +44,7 @@ public class RentalController implements  RentalControllerDocs {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id){
+    public void delete(@PathVariable Long id, @RequestBody @Valid RentalRequestDTO rentalRequestDTO){
         rentalService.deleteById(id);
     }
-
 }

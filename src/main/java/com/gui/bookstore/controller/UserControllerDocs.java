@@ -1,7 +1,7 @@
 package com.gui.bookstore.controller;
 
-import com.gui.bookstore.controller.DTO.Request.UserRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.UserResponseDTO;
+import com.gui.bookstore.controller.dto.request.UserRequestDTO;
+import com.gui.bookstore.controller.dto.response.UserResponseDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -40,7 +40,7 @@ public interface UserControllerDocs {
 
 
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "User updated"),
+            @ApiResponse(code = 200, message = "UserModel updated"),
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")
     })
     @ApiOperation(value = "Update a user")
@@ -52,6 +52,6 @@ public interface UserControllerDocs {
             @ApiResponse(code = 200, message = "Success, id deleted"),
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")
     })
-    void delete(Long id);
+    void delete(Long id, UserRequestDTO userRequestDTO);
 
 }

@@ -8,8 +8,9 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "user")
+public class UserModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,7 +28,8 @@ public class User {
     private String city;
 
     @Column(nullable = false, length = 100)
-    private String  address;
+    private String address;
+
     @Column(nullable = false, unique = true, length = 30)
     private String username;
 

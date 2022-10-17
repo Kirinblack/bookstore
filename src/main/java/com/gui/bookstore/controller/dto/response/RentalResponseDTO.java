@@ -1,8 +1,8 @@
-package com.gui.bookstore.controller.DTO.Response;
+package com.gui.bookstore.controller.dto.response;
 
 
-import com.gui.bookstore.model.Book;
-import com.gui.bookstore.model.User;
+import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.model.UserModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,9 +18,9 @@ public class RentalResponseDTO {
 
     private Long id;
 
-    private Book book;
+    private BookModel bookModel;
 
-    private User user;
+    private UserModel userModel;
 
     private LocalDate rentalDate;
 

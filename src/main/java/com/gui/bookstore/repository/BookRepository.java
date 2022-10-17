@@ -1,18 +1,18 @@
 package com.gui.bookstore.repository;
 
-import com.gui.bookstore.model.Book;
-import com.gui.bookstore.model.Publisher;
+import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.model.PublisherModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface BookRepository extends JpaRepository<Book,Long> {
+public interface BookRepository extends JpaRepository<BookModel,Long> {
 
-    Optional<Book> findById(Long id);
+    Optional<BookModel> findById(Long id);
 
-    Optional<Book>findByName(String name);
+    Optional<BookModel>findByName(String name);
 
-    Optional<Book>findByPublisher(Publisher publisher);
+    Optional<BookModel>findByPublisher(PublisherModel publisherModel);
 
-    Optional<Book>findByNameOrId(String name,Long id);
+    Optional<BookModel>findByNameOrId(String name, Long id);
 }

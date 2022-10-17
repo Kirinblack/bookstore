@@ -1,15 +1,15 @@
 package com.gui.bookstore.repository;
 
-import com.gui.bookstore.model.Book;
-import com.gui.bookstore.model.Rental;
-import com.gui.bookstore.model.User;
+import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.model.RentalModel;
+import com.gui.bookstore.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface RentalRepository extends JpaRepository<Rental,Long> {
+public interface RentalRepository extends JpaRepository<RentalModel,Long> {
 
-    List<Rental> findByBook(Book books);
+    List<RentalModel> findByBook(BookModel books);
 
-    List<Rental> findByUsers(User user);
+    List<RentalModel> findByUsers(UserModel userModel);
 }

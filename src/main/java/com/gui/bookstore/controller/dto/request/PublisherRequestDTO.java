@@ -1,4 +1,4 @@
-package com.gui.bookstore.controller.DTO.Request;
+package com.gui.bookstore.controller.dto.request;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;

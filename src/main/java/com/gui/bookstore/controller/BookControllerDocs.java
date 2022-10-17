@@ -1,8 +1,8 @@
 package com.gui.bookstore.controller;
 
 
-import com.gui.bookstore.controller.DTO.Request.BookRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.BookResponseDTO;
+import com.gui.bookstore.controller.dto.request.BookRequestDTO;
+import com.gui.bookstore.controller.dto.response.BookResponseDTO;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,17 +14,24 @@ import org.springframework.data.domain.Pageable;
 @Api("Books module management")
 public interface BookControllerDocs  {
 
-    @ApiOperation(value = "Book creation operation")
+    @ApiOperation(value = "BookModel creation operation")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Sucess book creation"),
             @ApiResponse(code = 400, message = "Missing required fields,wrong field range value or book already registered on system")
     })
     BookResponseDTO create(BookRequestDTO bookRequestDTO);
 
+    @ApiOperation(value = "BookModel update operation")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success book updated"),
+            @ApiResponse(code = 400, message = "Missing required field, or an error on validation field rules")
+    })
+    BookResponseDTO update(Long id, BookRequestDTO bookRequestDTO);
+
     @ApiOperation(value = "Find book by id operation")
     @ApiResponses(value = {
             @ApiResponse(code = 200,message = "the book was successfully found"),
-            @ApiResponse(code = 404, message = "Book not found error")
+            @ApiResponse(code = 404, message = "BookModel not found error")
     })
     BookResponseDTO findById(Long id);
 
@@ -34,18 +41,10 @@ public interface BookControllerDocs  {
     })
     Page<BookResponseDTO> findAll(Pageable pageable);
 
-    @ApiOperation(value = "Book delete operation")
+    @ApiOperation(value = "BookModel delete operation")
     @ApiResponses(value = {
             @ApiResponse(code = 202, message = "The book was successfully deleted"),
-            @ApiResponse(code = 404, message = "Book not found error")
+            @ApiResponse(code = 404, message = "BookModel not found error")
     })
-    void delete(Long id);
-
-    @ApiOperation(value = "Book update operation")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success book updated"),
-            @ApiResponse(code = 400, message = "Missing required field, or an error on validation field rules")
-    })
-    BookResponseDTO update(Long id, BookRequestDTO bookRequestDTO);
-
+    void delete(Long id, BookRequestDTO bookRequestDTO);
 }

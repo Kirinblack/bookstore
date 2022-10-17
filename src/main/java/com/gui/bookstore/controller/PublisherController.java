@@ -1,8 +1,9 @@
 package com.gui.bookstore.controller;
 
 
-import com.gui.bookstore.controller.DTO.Request.PublisherRequestDTO;
-import com.gui.bookstore.controller.DTO.Response.PublisherResponseDTO;
+import com.gui.bookstore.controller.dto.request.BookRequestDTO;
+import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
+import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
 import com.gui.bookstore.service.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,9 +15,9 @@ import javax.validation.Valid;
 
 
 @RestController
-@RequestMapping("api/v2/publisher")
+@RequestMapping("api/v3/publisher")
 @CrossOrigin(origins = "*")
-public class PublisherController extends PublisherResponseDTO {
+public class PublisherController implements PublisherControllerDocs {
 
     @Autowired
     PublisherService publisherService;
@@ -31,7 +32,6 @@ public class PublisherController extends PublisherResponseDTO {
     }
 
 
-
     @GetMapping
     public Page<PublisherResponseDTO> findAll(Pageable pageable) {
         return publisherService.findAll(pageable);
@@ -40,7 +40,7 @@ public class PublisherController extends PublisherResponseDTO {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id){
+    public void delete(@PathVariable Long id, @RequestBody @Valid PublisherRequestDTO PublisherRequestDTO){
         publisherService.deleteById(id);
     }
 
