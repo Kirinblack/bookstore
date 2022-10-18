@@ -1,4 +1,4 @@
-package com.gui.bookstore.controller.dto.response;
+//package com.gui.bookstore.controller.dto.response;
 
 
 import com.gui.bookstore.model.BookModel;
@@ -10,21 +10,21 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class RentalResponseDTO {
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//public class RentalResponseDTO {
 
-    private Long id;
+  //  private Long id;
 
-    private BookModel bookModel;
+    //private BookModel bookModel;
 
-    private UserModel userModel;
+    //private UserModel userModel;
 
-    private LocalDate rentalDate;
+    //private LocalDate rentalDate;
 
-    private LocalDate returnForecast;
+    //private LocalDate returnForecast;
 
-    private String returnDate;
-}
+    //private String returnDate;
+//}

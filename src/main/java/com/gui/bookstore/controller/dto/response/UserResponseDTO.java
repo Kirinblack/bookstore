@@ -1,4 +1,4 @@
-package com.gui.bookstore.controller.dto.response;
+//package com.gui.bookstore.controller.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,23 +7,23 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class UserResponseDTO {
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//public class UserResponseDTO {
 
-    private Long id;
+  //  private Long id;
 
-    private String name;
+    //private String name;
 
-    private String email;
+    //private String email;
 
-    private String password;
+    //private String password;
 
-    private String city;
+    //private String city;
 
-    private String address;
+    //private String address;
 
-    private LocalDate registrationDate;
-}
+    //private LocalDate registrationDate;
+//}

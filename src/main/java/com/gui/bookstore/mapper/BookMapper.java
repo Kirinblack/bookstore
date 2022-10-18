@@ -3,17 +3,25 @@ package com.gui.bookstore.mapper;
 import com.gui.bookstore.controller.dto.request.BookRequestDTO;
 import com.gui.bookstore.controller.dto.response.BookResponseDTO;
 import com.gui.bookstore.model.BookModel;
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
-@Mapper
-public interface BookMapper {
+@Component("Mapper")
+@RequiredArgsConstructor
+public class BookMapper {
 
-    BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+    private final ModelMapper mapper = new ModelMapper();
 
-    BookModel toModel(BookRequestDTO bookRequestDTO);
+    public BookModel toBookModel(BookRequestDTO book) {
+        return mapper.map(book, BookModel.class);
+    }
 
-    BookModel toModel(BookResponseDTO bookResponseDTO);
+    public BookRequestDTO toBookRequest(BookModel book) {
+        return mapper.map(book, BookRequestDTO.class);
+    }
 
-    BookResponseDTO ToDTO(BookModel bookModel);
+    public BookResponseDTO toBookResponse(BookModel book) {
+        return mapper.map(book, BookResponseDTO.class);
+    }
 }

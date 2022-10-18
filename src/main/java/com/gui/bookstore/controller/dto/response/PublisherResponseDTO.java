@@ -1,19 +1,19 @@
-package com.gui.bookstore.controller.dto.response;
+//package com.gui.bookstore.controller.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class PublisherResponseDTO {
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//public class PublisherResponseDTO {
 
-    private Long id;
+    //private Long id;
 
-    private String name;
+    //private String name;
 
-    private String city;
-}
+  //  private String city;
+//}

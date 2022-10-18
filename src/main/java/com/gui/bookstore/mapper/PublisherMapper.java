@@ -1,19 +1,29 @@
-package com.gui.bookstore.mapper;
-
-import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
-import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
-import com.gui.bookstore.model.PublisherModel;
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
-
-@Mapper
-public interface PublisherMapper {
-
-    PublisherMapper INSTANCE = Mappers.getMapper(PublisherMapper.class);
-
-    PublisherModel toModel(PublisherRequestDTO publisherRequestDTO);
-
-    PublisherModel toModel(PublisherResponseDTO publisherResponseDTO);
-
-    PublisherResponseDTO toDTO(PublisherModel publisherModel);
-}
+//package com.gui.bookstore.mapper;
+//
+//import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
+//import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
+//import com.gui.bookstore.model.PublisherModel;
+//import lombok.RequiredArgsConstructor;
+//import org.modelmapper.ModelMapper;
+//import org.springframework.stereotype.Component;
+//
+//@RequiredArgsConstructor
+//@Component
+//public class PublisherMapper {
+//
+//    private final ModelMapper mapper = new ModelMapper();
+//
+//    public PublisherModel toPublisherModel(PublisherRequestDTO publisher){
+//        return mapper.map(publisher, PublisherModel.class);
+//    }
+//
+//    public PublisherRequestDTO toBooksRequest(PublisherModel book){
+//        return mapper.map(book, PublisherRequestDTO.class);
+//    }
+//
+//    public PublisherResponseDTO toPublisherResponse(PublisherModel publisher){
+//        return mapper.map(publisher, PublisherResponseDTO.class);
+//    }
+//
+//
+//}

@@ -2,7 +2,11 @@ package com.gui.bookstore.controller;
 
 import com.gui.bookstore.controller.dto.request.BookRequestDTO;
 import com.gui.bookstore.controller.dto.response.BookResponseDTO;
-import com.gui.bookstore.service.BookService;
+import com.gui.bookstore.mapper.BookMapper;
+import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.service.BookInterface;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,32 +22,43 @@ import javax.validation.Valid;
 public class BookController implements BookControllerDocs {
 
     @Autowired
-    BookService bookService;
+    private BookInterface bookService;
+
+    @Autowired
+    private  BookMapper bookMapper;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public BookResponseDTO create(@RequestBody @Valid BookRequestDTO bookRequestDTO){
-        return bookService.create(bookRequestDTO);
+        BookModel bookModel = bookMapper.toBookModel(bookRequestDTO);
+        bookService.create(bookModel);
+        return bookMapper.toBookResponse(bookModel);
     }
 
     @GetMapping("/{id}")
     public BookResponseDTO findById(@PathVariable Long id){
-        return bookService.findById(id);
+        BookModel bookModel = bookService.findById(id);
+        BookResponseDTO bookResponseDTO = bookMapper.toBookResponse(bookModel);
+        return bookResponseDTO;
     }
 
     @GetMapping()
     public Page<BookResponseDTO> findAll(Pageable pageable){
-        return bookService.findAll(pageable);
+        Page<BookResponseDTO> bookResponseDTO = bookService.findAll(pageable).map(bookMapper::toBookResponse);
+        return bookResponseDTO;
+    }
+
+    @PutMapping("/{id}")
+    public BookResponseDTO update(@PathVariable Long id, @RequestBody @Valid BookRequestDTO bookRequestDTO){
+        BookModel bookModel = bookMapper.toBookModel(bookRequestDTO);
+        bookService.update(id,bookModel);
+        BookResponseDTO bookResponseDTO = bookMapper.toBookResponse(bookModel);
+        return bookResponseDTO;
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id, @RequestBody @Valid BookRequestDTO bookRequestDTO){
-        bookService.deleteById(id);
-    }
-
-    @PutMapping("/{id}")
-    public BookResponseDTO update(@PathVariable Long id, @RequestBody @Valid BookRequestDTO bookRequestDTO){
-        return bookService.update(id,bookRequestDTO);
+        bookService.delete(id);
     }
 }
