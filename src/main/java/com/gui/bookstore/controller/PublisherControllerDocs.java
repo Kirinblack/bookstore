@@ -35,16 +35,16 @@
 //    Page<PublisherResponseDTO> findAll(Pageable pageable);
 //
 //    @ApiOperation(value = "Delete publisher by id operation")
-    //@ApiResponses(value = {
-        //    @ApiResponse(code = 204, message = "Success publisher deleted"),
-      //      @ApiResponse(code = 404, message = "PublisherModel not found error")
-    //})
-    //void delete(Long id, PublisherRequestDTO publisherRequestDTO);
+//    @ApiResponses(value = {
+//    @ApiResponse(code = 204, message = "Success publisher deleted"),
+//      @ApiResponse(code = 404, message = "PublisherModel not found error")
+//})
+//void delete(Long id, PublisherRequestDTO publisherRequestDTO);
 
-    //@ApiOperation(value = "PublisherModel update operation")
-    //@ApiResponses(value = {
-        //    @ApiResponse(code = 200, message = "Success publisher update"),
-      //      @ApiResponse(code = 400, message = "Missing required field, or an error on validation field rules")
-    //})
-  //  PublisherResponseDTO update(Long id, PublisherRequestDTO publisherRequestDTO);
+//@ApiOperation(value = "PublisherModel update operation")
+//@ApiResponses(value = {
+//    @ApiResponse(code = 200, message = "Success publisher update"),
+//      @ApiResponse(code = 400, message = "Missing required field, or an error on validation field rules")
+//})
+//  PublisherResponseDTO update(Long id, PublisherRequestDTO publisherRequestDTO);
 //}

@@ -6,7 +6,6 @@ import com.gui.bookstore.mapper.BookMapper;
 import com.gui.bookstore.model.BookModel;
 import com.gui.bookstore.service.BookInterface;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +24,7 @@ public class BookController implements BookControllerDocs {
     private BookInterface bookService;
 
     @Autowired
-    private  BookMapper bookMapper;
+    private BookMapper bookMapper;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

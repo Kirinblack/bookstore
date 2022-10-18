@@ -1,6 +1,5 @@
 //package com.gui.bookstore.repository;
 //
-//import com.gui.bookstore.model.PublisherModel;
 //import org.springframework.data.jpa.repository.JpaRepository;
 //
 //import java.util.Optional;

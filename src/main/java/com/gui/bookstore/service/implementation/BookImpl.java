@@ -1,7 +1,5 @@
 package com.gui.bookstore.service.implementation;
 
-
-import com.gui.bookstore.controller.dto.request.BookRequestDTO;
 import com.gui.bookstore.model.BookModel;
 import com.gui.bookstore.repository.BookRepository;
 import com.gui.bookstore.service.BookInterface;

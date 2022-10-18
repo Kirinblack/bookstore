@@ -1,6 +1,5 @@
 package com.gui.bookstore.controller.dto.response;
 
-import com.gui.bookstore.model.PublisherModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +28,4 @@ public class BookResponseDTO {
     private LocalDate launchDate;
 
     private String author;
-
-    private PublisherModel publisherModel;
 }
