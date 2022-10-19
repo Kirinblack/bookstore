@@ -30,7 +30,4 @@ public class BookModel {
 
     @Column(nullable = false)
     private String author;
-
-    @ManyToOne(cascade = {CascadeType.MERGE})
-    private PublisherModel publisherModel;
 }

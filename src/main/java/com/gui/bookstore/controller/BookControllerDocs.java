@@ -46,5 +46,5 @@ public interface BookControllerDocs  {
             @ApiResponse(code = 202, message = "The book was successfully deleted"),
             @ApiResponse(code = 404, message = "BookModel not found error")
     })
-    void delete(Long id, BookRequestDTO bookRequestDTO);
+    void delete(Long id);
 }
