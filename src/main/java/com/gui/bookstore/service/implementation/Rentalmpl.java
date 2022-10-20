@@ -1,6 +1,6 @@
 package com.gui.bookstore.service.implementation;
 
-import com.gui.bookstore.model.PublisherModel;
+
 import com.gui.bookstore.model.RentalModel;
 import com.gui.bookstore.repository.RentalRepository;
 import com.gui.bookstore.service.RentalInterface;

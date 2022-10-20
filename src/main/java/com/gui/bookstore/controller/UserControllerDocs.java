@@ -29,8 +29,6 @@ public interface UserControllerDocs {
     UserResponseDTO getById(Long id);
 
 
-    //MessageDTO update(Long id, UserRequestDTO userToUpdateDTO);
-
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success to get the user"),
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")

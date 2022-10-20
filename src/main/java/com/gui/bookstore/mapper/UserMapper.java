@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("Mapper")
 @RequiredArgsConstructor
 public class UserMapper {
 
