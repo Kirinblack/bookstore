@@ -2,13 +2,10 @@ package com.gui.bookstore.controller;
 
 
 import com.gui.bookstore.controller.dto.request.RentalRequestDTO;
-import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
 import com.gui.bookstore.controller.dto.response.RentalResponseDTO;
 import com.gui.bookstore.mapper.RentalMapper;
-import com.gui.bookstore.model.PublisherModel;
 import com.gui.bookstore.model.RentalModel;
 import com.gui.bookstore.service.RentalInterface;
-import com.gui.bookstore.service.implementation.Rentalmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
