@@ -19,9 +19,6 @@ public class PublisherModel {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @Column(nullable = false,unique = true,length = 100)
-    private String code;
-
     @Column(nullable = false,length = 100)
     private String city;
 
