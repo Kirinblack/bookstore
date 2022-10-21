@@ -9,8 +9,12 @@
 //
 //@Getter
 //@Setter
+//import lombok.AllArgsConstructor;
+//import lombok.NoArgsConstructor;
+//@AllArgsConstructor
+//@NoArgsConstructor
 //@Entity
-//@Table(name = "rental")
+//@Table(name = "rentals")
 //public class RentalModel {
 //
 //    @Id

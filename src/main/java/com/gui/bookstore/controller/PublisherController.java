@@ -33,7 +33,7 @@ public class PublisherController implements PublisherControllerDocs {
     public PublisherResponseDTO create(@RequestBody @Valid PublisherRequestDTO publisherRequestDTO){
         PublisherModel publisherModel = publisherMapper.toPublisherModel(publisherRequestDTO);
         publisherService.create(publisherModel);
-      return publisherMapper.toPublisherResponse(publisherModel);
+        return publisherMapper.toPublisherResponse(publisherModel);
     }
     @GetMapping("/{id}")
     public PublisherResponseDTO findById(@PathVariable Long id){
