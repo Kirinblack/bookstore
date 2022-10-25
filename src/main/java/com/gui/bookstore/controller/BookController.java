@@ -4,7 +4,7 @@ import com.gui.bookstore.controller.dto.request.BookRequestDTO;
 import com.gui.bookstore.controller.dto.response.BookResponseDTO;
 import com.gui.bookstore.mapper.BookMapper;
 import com.gui.bookstore.model.BookModel;
-import com.gui.bookstore.service.BookInterface;
+import com.gui.bookstore.service.BookService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,7 +21,7 @@ import javax.validation.Valid;
 public class BookController implements BookControllerDocs {
 
     @Autowired
-    private BookInterface bookService;
+    private BookService bookService;
 
     @Autowired
     private BookMapper bookMapper;

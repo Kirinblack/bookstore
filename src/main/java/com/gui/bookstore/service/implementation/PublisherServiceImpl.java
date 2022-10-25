@@ -1,10 +1,8 @@
 package com.gui.bookstore.service.implementation;
 
-import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
-import com.gui.bookstore.model.BookModel;
 import com.gui.bookstore.model.PublisherModel;
 import com.gui.bookstore.repository.PublisherRepository;
-import com.gui.bookstore.service.PublisherInterface;
+import com.gui.bookstore.service.PublisherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +14,7 @@ import javax.transaction.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class PublisherImpl implements PublisherInterface {
+public class PublisherServiceImpl implements PublisherService {
 
     @Autowired
     private final PublisherRepository publisherRepository;

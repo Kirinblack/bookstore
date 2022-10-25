@@ -4,7 +4,7 @@ import com.gui.bookstore.model.PublisherModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface PublisherInterface {
+public interface PublisherService {
 
     PublisherModel create(PublisherModel publisherModel);
 

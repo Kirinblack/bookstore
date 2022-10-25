@@ -2,13 +2,11 @@ package com.gui.bookstore.controller;
 
 
 import com.gui.bookstore.controller.dto.request.UserRequestDTO;
-import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
 import com.gui.bookstore.controller.dto.response.UserResponseDTO;
 
 import com.gui.bookstore.mapper.UserMapper;
-import com.gui.bookstore.model.PublisherModel;
 import com.gui.bookstore.model.UserModel;
-import com.gui.bookstore.service.UserInterface;
+import com.gui.bookstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +22,7 @@ import javax.validation.Valid;
 public class UserController implements UserControllerDocs {
 
     @Autowired
-    private UserInterface userService;
+    private UserService userService;
 
     @Autowired
     private UserMapper userMapper;

@@ -25,7 +25,4 @@ public class PublisherModel {
 
     @Column(nullable = false,length = 100)
     private String city;
-
-    @Column(nullable = false)
-    private LocalDate registrationDate;
 }

@@ -2,13 +2,10 @@ package com.gui.bookstore.controller;
 
 
 import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
-import com.gui.bookstore.controller.dto.response.BookResponseDTO;
 import com.gui.bookstore.controller.dto.response.PublisherResponseDTO;
 import com.gui.bookstore.mapper.PublisherMapper;
-import com.gui.bookstore.model.BookModel;
 import com.gui.bookstore.model.PublisherModel;
-import com.gui.bookstore.service.PublisherInterface;
-import com.gui.bookstore.service.implementation.PublisherImpl;
+import com.gui.bookstore.service.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,17 +14,17 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-
 @RestController
 @RequestMapping("api/v3/publisher")
 @CrossOrigin(origins = "*")
 public class PublisherController implements PublisherControllerDocs {
 
     @Autowired
-    private PublisherInterface publisherService;
+    private PublisherService publisherService;
 
     @Autowired
     private PublisherMapper publisherMapper;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public PublisherResponseDTO create(@RequestBody @Valid PublisherRequestDTO publisherRequestDTO){
@@ -41,7 +38,6 @@ public class PublisherController implements PublisherControllerDocs {
         PublisherResponseDTO publisherResponseDTO = publisherMapper.toPublisherResponse(publisherModel);
         return publisherResponseDTO;
     }
-
 
     @GetMapping
     public Page<PublisherResponseDTO> findAll(Pageable pageable) {

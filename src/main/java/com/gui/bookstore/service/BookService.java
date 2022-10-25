@@ -4,7 +4,7 @@ import com.gui.bookstore.model.BookModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface BookInterface {
+public interface BookService {
 
     BookModel create(BookModel bookModel);
 

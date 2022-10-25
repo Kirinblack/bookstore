@@ -2,7 +2,7 @@ package com.gui.bookstore.service.implementation;
 
 import com.gui.bookstore.model.UserModel;
 import com.gui.bookstore.repository.UserRepository;
-import com.gui.bookstore.service.UserInterface;
+import com.gui.bookstore.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class UserImpl implements UserInterface {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private final UserRepository userRepository;
