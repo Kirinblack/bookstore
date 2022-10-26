@@ -1,5 +1,6 @@
 package com.gui.bookstore.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,7 +19,7 @@ import java.time.LocalDate;
 public class BookModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true, length = 100)
@@ -37,4 +39,8 @@ public class BookModel {
 
     @ManyToOne
     private PublisherModel publisher;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "book")
+    private List <RentalModel> rentals;
 }

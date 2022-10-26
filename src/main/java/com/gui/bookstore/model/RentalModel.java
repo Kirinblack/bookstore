@@ -1,6 +1,8 @@
 package com.gui.bookstore.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.gui.bookstore.model.enums.StatusRental;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,7 @@ import java.time.LocalDate;
 public class RentalModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -31,10 +33,13 @@ public class RentalModel {
     private LocalDate devolutionDate;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
-    private BookModel bookModel;
+    @JsonBackReference
+    private BookModel book;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserModel userModel;
+    @JsonBackReference
+    private UserModel user;
+
+    @Enumerated(EnumType.STRING)
+    private StatusRental status;
 }

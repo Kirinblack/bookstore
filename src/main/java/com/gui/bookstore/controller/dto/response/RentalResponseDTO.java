@@ -18,13 +18,13 @@ public class RentalResponseDTO {
 
     private Long id;
 
-    private BookModel bookModel;
+    private BookModel book;
 
-    private UserModel userModel;
+    private UserModel user;
 
     private LocalDate rentalDate;
 
-    private LocalDate returnForecast;
+    private LocalDate forecastDate;
 
     private String returnDate;
 }

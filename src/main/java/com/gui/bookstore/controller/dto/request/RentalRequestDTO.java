@@ -14,8 +14,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class RentalRequestDTO {
 
-    private Long id;
-
     @NotNull
     private Long bookId;
 
@@ -23,14 +21,14 @@ public class RentalRequestDTO {
     private Long userId;
 
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate rentalDate;
 
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate forecastDate;
 
-    @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate devolutionDate;
 }
