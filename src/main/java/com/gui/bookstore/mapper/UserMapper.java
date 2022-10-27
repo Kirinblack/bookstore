@@ -6,12 +6,7 @@ import com.gui.bookstore.model.UserModel;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-
-<<<<<<< HEAD
 @Component
-=======
-@Component("Mapper")
->>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 @RequiredArgsConstructor
 public class UserMapper {
 

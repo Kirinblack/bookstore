@@ -28,10 +28,6 @@ public interface UserControllerDocs {
     @ApiOperation(value = "Get user by id")
     UserResponseDTO getById(Long id);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success to get the user"),
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")

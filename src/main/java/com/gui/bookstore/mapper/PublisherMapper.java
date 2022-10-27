@@ -8,7 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-@Component("Mapper")
+@Component
 public class PublisherMapper {
 
     private final ModelMapper mapper = new ModelMapper();

@@ -13,9 +13,6 @@ public interface BookRepository extends JpaRepository<BookModel,Long> {
 
     Optional<BookModel>findByName(String name);
 
-<<<<<<< HEAD
     Optional<BookModel> findByPublisherId(Long id);
-=======
->>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 
 }
