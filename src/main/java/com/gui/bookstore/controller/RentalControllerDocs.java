@@ -21,6 +21,16 @@ public interface RentalControllerDocs {
     })
     RentalResponseDTO create(RentalRequestDTO rentalsRequestDTO);
 
+<<<<<<< HEAD
+=======
+    @ApiOperation(value = "Update a new book")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "success Rentals update"),
+            @ApiResponse(code = 400, message = "Missing data. Check and try again.")
+    })
+    RentalResponseDTO update(Long id, RentalRequestDTO rentalRequestDTO);
+
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
     @ApiOperation(value = "Find a result by id")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "success search"),
@@ -33,6 +43,7 @@ public interface RentalControllerDocs {
             @ApiResponse(code = 200, message = "success Rentals creation"),
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")
     })
+<<<<<<< HEAD
     Page<RentalResponseDTO> findAll(Pageable pageable);
 
     @ApiOperation(value = "Update a new book")
@@ -41,6 +52,9 @@ public interface RentalControllerDocs {
             @ApiResponse(code = 400, message = "Missing data. Check and try again.")
     })
     RentalResponseDTO update(Long id, RentalRequestDTO rentalRequestDTO);
+=======
+    Page<RentalResponseDTO> getRentals(Pageable pageable);
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 
     @ApiOperation(value = "Delete a rental by id")
     @ApiResponses(value = {

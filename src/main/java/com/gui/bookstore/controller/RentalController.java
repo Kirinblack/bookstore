@@ -5,7 +5,11 @@ import com.gui.bookstore.controller.dto.request.RentalRequestDTO;
 import com.gui.bookstore.controller.dto.response.RentalResponseDTO;
 import com.gui.bookstore.mapper.RentalMapper;
 import com.gui.bookstore.model.RentalModel;
+<<<<<<< HEAD
 import com.gui.bookstore.service.RentalService;
+=======
+import com.gui.bookstore.service.RentalInterface;
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +25,11 @@ import javax.validation.Valid;
 public class RentalController implements  RentalControllerDocs {
 
     @Autowired
+<<<<<<< HEAD
     private RentalService rentalService;
+=======
+    RentalInterface rentalService;
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 
     @Autowired
     private RentalMapper rentalMapper;
@@ -37,12 +45,21 @@ public class RentalController implements  RentalControllerDocs {
     @GetMapping("/{id}")
     public RentalResponseDTO findById(@PathVariable Long id) {
         RentalModel rentalModel = rentalService.findById(id);
+<<<<<<< HEAD
         RentalResponseDTO RentalResponseDTO = rentalMapper.toRentalResponse(rentalModel);
         return RentalResponseDTO;
     }
 
     @GetMapping
     public Page<RentalResponseDTO> findAll(Pageable pageable) {
+=======
+        RentalResponseDTO rentalResponseDTO = rentalMapper.toRentalResponse(rentalModel);
+        return rentalResponseDTO;
+    }
+
+    @GetMapping
+    public Page<RentalResponseDTO> getRentals(Pageable pageable) {
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
         Page<RentalResponseDTO> rentalResponseDTO = rentalService.findAll(pageable).map(rentalMapper::toRentalResponse);
         return rentalResponseDTO;
     }

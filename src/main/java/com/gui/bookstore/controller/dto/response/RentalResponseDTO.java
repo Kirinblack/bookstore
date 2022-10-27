@@ -18,6 +18,7 @@ public class RentalResponseDTO {
 
     private Long id;
 
+<<<<<<< HEAD
     private BookModel book;
 
     private UserModel user;
@@ -25,6 +26,15 @@ public class RentalResponseDTO {
     private LocalDate rentalDate;
 
     private LocalDate forecastDate;
+=======
+    private BookModel bookModel;
+
+    private UserModel userModel;
+
+    private LocalDate rentalDate;
+
+    private LocalDate returnForecast;
+>>>>>>> 3a98c288d77b73e7164d3b3d89d3d94b8c813086
 
     private String returnDate;
 }
