@@ -52,7 +52,7 @@ public class RentalModelValidation {
 
     private void validateUser(Long id) {
         if (userRepository.findById(id).isEmpty()){
-            throw new BusinessException("Leitor não foi encontrado");
+            throw new BusinessException("Leitor(a) não foi encontrado");
         }
     }
 
