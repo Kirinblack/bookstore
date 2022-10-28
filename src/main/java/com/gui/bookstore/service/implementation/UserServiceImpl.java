@@ -1,6 +1,7 @@
 package com.gui.bookstore.service.implementation;
 
 import com.gui.bookstore.model.UserModel;
+import com.gui.bookstore.model.validation.UserModelValidation;
 import com.gui.bookstore.repository.UserRepository;
 import com.gui.bookstore.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +20,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private final UserRepository userRepository;
 
+    @Autowired
+    private final UserModelValidation userValidation;
+
     @Override
     public UserModel create(UserModel userModel){
+        userValidation.validateForCreate(userModel);
         return userRepository.save(userModel);
     }
 

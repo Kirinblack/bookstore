@@ -2,6 +2,7 @@ package com.gui.bookstore.model.validation;
 
 import com.gui.bookstore.controller.dto.request.BookRequestDTO;
 import com.gui.bookstore.exception.BusinessException;
+import com.gui.bookstore.model.BookModel;
 import com.gui.bookstore.model.RentalModel;
 import com.gui.bookstore.model.enums.StatusRental;
 import com.gui.bookstore.repository.BookRepository;
@@ -25,9 +26,9 @@ public class BookModelValidation {
     @Autowired
     private PublisherRepository publisherRepository;
 
-    public void validateForCreate(BookRequestDTO bookRequestDTO){
-        validateName(bookRequestDTO.getName());
-        validatePublisher(bookRequestDTO.getPublisherId());
+    public void validateForCreate(BookModel bookModel){
+        validateName(bookModel.getName());
+        validatePublisher(bookModel.getPublisher().getId());
     }
 
     private void validatePublisher(Long publisher) {

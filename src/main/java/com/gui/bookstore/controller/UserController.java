@@ -58,7 +58,7 @@ public class UserController implements UserControllerDocs {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id, @RequestBody @Valid UserRequestDTO userRequestDTO) {
+    public void delete(@PathVariable("id") Long id){
         userService.delete(id);
     }
 }

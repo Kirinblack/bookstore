@@ -2,6 +2,7 @@ package com.gui.bookstore.service.implementation;
 
 
 import com.gui.bookstore.model.RentalModel;
+import com.gui.bookstore.model.validation.RentalModelValidation;
 import com.gui.bookstore.repository.RentalRepository;
 import com.gui.bookstore.service.RentalService;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +21,13 @@ public class RentalServiceImpl implements RentalService {
     @Autowired
     private final RentalRepository rentalRepository;
 
+    @Autowired
+    private  final RentalModelValidation rentalValidation;
+
 
     @Override
     public RentalModel create(RentalModel rentalModel){
+        rentalValidation.validateForCreate(rentalModel);
         return rentalRepository.save(rentalModel);
     }
 

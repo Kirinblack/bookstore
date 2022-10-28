@@ -3,6 +3,7 @@ package com.gui.bookstore.model.validation;
 import com.gui.bookstore.controller.dto.request.RentalRequestDTO;
 import com.gui.bookstore.exception.BusinessException;
 import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.model.RentalModel;
 import com.gui.bookstore.model.enums.StatusRental;
 import com.gui.bookstore.repository.BookRepository;
 import com.gui.bookstore.repository.RentalRepository;
@@ -37,10 +38,10 @@ public class RentalModelValidation {
         }
     }
 
-    public void validateForCreate(RentalRequestDTO rentalRequestDTO){
-        validateBook(rentalRequestDTO.getBookId());
-        validateUser(rentalRequestDTO.getUserId());
-        validateDevolution(rentalRequestDTO.getRentalDate(), rentalRequestDTO.getForecastDate());
+    public void validateForCreate(RentalModel rentalModel ){
+        validateBook(rentalModel.getBook().getId());
+        validateUser(rentalModel.getUser().getId());
+        validateDevolution(rentalModel.getRentalDate(), rentalModel.getForecastDate());
 
     }
 

@@ -4,6 +4,7 @@ import com.gui.bookstore.controller.dto.request.PublisherRequestDTO;
 import com.gui.bookstore.exception.BusinessException;
 import com.gui.bookstore.exception.IdFoundException;
 import com.gui.bookstore.model.BookModel;
+import com.gui.bookstore.model.PublisherModel;
 import com.gui.bookstore.repository.BookRepository;
 import com.gui.bookstore.repository.PublisherRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +23,8 @@ public class PublisherModelValidation {
     @Autowired
     private BookRepository bookRepository;
 
-    public void validateForCreate(PublisherRequestDTO publisherRequestDTO) {
-        validateName(publisherRequestDTO.getName());
-
+    public void validateForCreate(PublisherModel publisherModel) {
+        validateName(publisherModel.getName());
     }
 
     public void validateForDelete(Long id) {

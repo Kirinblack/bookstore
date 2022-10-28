@@ -3,6 +3,7 @@ package com.gui.bookstore.model.validation;
 import com.gui.bookstore.controller.dto.request.UserRequestDTO;
 import com.gui.bookstore.exception.BusinessException;
 import com.gui.bookstore.model.RentalModel;
+import com.gui.bookstore.model.UserModel;
 import com.gui.bookstore.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class UserModelValidation {
     @Autowired
     private UserRepository userRepository;
 
-    public void validateForCreate(UserRequestDTO userRequestDTO){
-        validateName(userRequestDTO.getName());
+    public void validateForCreate(UserModel userModel){
+        validateName(userModel.getName());
     }
 
     private void validateName(String name) {
